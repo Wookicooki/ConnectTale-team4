@@ -302,4 +302,9 @@ public class NovelDetailUtils {
 
     return ridiPlatformEntity;
   }
+
+  List<Integer> answer = new ArrayList<>();
 }
+
+
+
