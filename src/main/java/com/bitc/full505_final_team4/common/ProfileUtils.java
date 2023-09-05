@@ -27,7 +27,7 @@ public class ProfileUtils {
     String date = String.valueOf(System.nanoTime());
     String current_date = date + id;
 
-    String path = "C:/profile";
+    String path = "/home/ec2-user/bmn_img";
 
     File file = new File(path);
 

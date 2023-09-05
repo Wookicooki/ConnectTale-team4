@@ -26,7 +26,6 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
     factory.setMaxFileSize(DataSize.ofBytes(10 * 1024 * 1024));
     return factory.createMultipartConfig();
   }
-  
 
   @Value("${resource.member.path}")
   private String resourceMemberPath;
@@ -34,6 +33,4 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
     registry.addResourceHandler("/profile/**").addResourceLocations(resourceMemberPath);
   }
-
-
 }
