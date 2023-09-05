@@ -27,10 +27,12 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
     return factory.createMultipartConfig();
   }
 
+
   @Value("${resource.member.path}")
   private String resourceMemberPath;
   @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
     registry.addResourceHandler("/profile/**").addResourceLocations(resourceMemberPath);
   }
+
 }
