@@ -15,7 +15,11 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class WebDriverUtil {
   public static String WEB_DRIVER_ID  = "webdriver.chrome.driver";
-  private static String WEB_DRIVER_PATH = "C:\\chromedriver\\chromedriver.exe"; // WebDriver 경로
+//  private static String WEB_DRIVER_PATH = "C:\\chromedriver\\chromedriver.exe"; // WebDriver 경로
+
+  public static String WEB_DRIVER_PATH = "/home/ec2-user/chromedriver-linux64/chromedriver"; // WebDriver 경로
+
+
   public static WebDriver getChromeDriver(){
     System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH);
 

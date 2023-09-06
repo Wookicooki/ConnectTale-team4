@@ -29,8 +29,10 @@ public class NovelSearchServiceImpl implements NovelSearchService {
 
   // 셀레니움을 통한 크롤링(카카오페이지)
   public static String WEB_DRIVER_ID = "webdriver.chrome.driver";
-  public static String WEB_DRIVER_PATH = "C:\\chromedriver\\chromedriver.exe";
+//  public static String WEB_DRIVER_PATH = "C:\\chromedriver\\chromedriver.exe";
 
+  // 배포용 크롬드라이버 경로
+  public static String WEB_DRIVER_PATH = "/home/ec2-user/chromedriver-linux64/chromedriver";
 // --------------------- 카카오페이지 작품 id 가져오기 ------------------------------
   // 셀레니움을 통해 검색 결과에 따른 카카오페이지 작품 id 리스트 가져오기
   @Override
@@ -52,7 +54,7 @@ public class NovelSearchServiceImpl implements NovelSearchService {
 //    options.addArguments("--window-size=0,0");
 //    options.addArguments("--lang=ko");
     options.addArguments("--disable-gpu");            //gpu 비활성화
-    options.addArguments("--blink-settings=imagesEnabled=false"); //이미지 다운 안받음
+//    options.addArguments("--blink-settings=imagesEnabled=false"); //이미지 다운 안받음
 
     driver = new ChromeDriver(options);
     driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
@@ -122,14 +124,14 @@ public class NovelSearchServiceImpl implements NovelSearchService {
     ChromeOptions options = new ChromeOptions();
 //    options.addArguments("--disable-popup-blocking"); // 팝업 안띄움
 //    options.addArguments("--headless"); // 브라우저 창 숨기고 실행
-    options.addArguments("--start-minimized");
-    options.addArguments("--enable-automation");
-    options.addArguments("--window-position=1980,1050");
-    Dimension windowSize = new Dimension(800, 600); // 원하는 크기로 설정
-    options.addArguments("--window-size=" + windowSize.width + "," + windowSize.height);
-    options.addArguments("--lang=ko");
+//    options.addArguments("--start-minimized");
+//    options.addArguments("--enable-automation");
+//    options.addArguments("--window-position=1980,1050");
+//    Dimension windowSize = new Dimension(800, 600); // 원하는 크기로 설정
+//    options.addArguments("--window-size=" + windowSize.width + "," + windowSize.height);
+//    options.addArguments("--lang=ko");
     options.addArguments("--disable-gpu");            //gpu 비활성화
-    options.addArguments("--blink-settings=imagesEnabled=false"); //이미지 다운 안받음
+//    options.addArguments("--blink-settings=imagesEnabled=false"); //이미지 다운 안받음
 
     driver = new ChromeDriver();
     driver.manage().timeouts().implicitlyWait(300, TimeUnit.MILLISECONDS);

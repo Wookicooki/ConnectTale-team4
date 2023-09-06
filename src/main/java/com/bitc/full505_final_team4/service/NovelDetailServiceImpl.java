@@ -47,8 +47,10 @@ public class NovelDetailServiceImpl implements NovelDetailService {
 
   // 셀레니움 사용을 위한 크롬드라이버 설정
   public static String WEB_DRIVER_ID = "webdriver.chrome.driver";
-  public static String WEB_DRIVER_PATH = "C:\\chromedriver\\chromedriver.exe";
+//  public static String WEB_DRIVER_PATH = "C:\\chromedriver\\chromedriver.exe";
 
+  // 배포용 크롬드라이버 경로
+  public static String WEB_DRIVER_PATH = "/home/ec2-user/chromedriver-linux64/chromedriver";
 
   // 매개변수인 title, ebookCheck, novelAdult로 platform 테이블에서 가져오기
   @Override
@@ -134,16 +136,16 @@ public class NovelDetailServiceImpl implements NovelDetailService {
     System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH);
 
     ChromeOptions options = new ChromeOptions();
-    options.addArguments("--disable-popup-blocking"); // 팝업 안띄움
-//    options.addArguments("--headless"); // 브라우저 창 숨기고 실행
-    options.addArguments("--start-minimized");
-    options.addArguments("--enable-automation");
-    options.addArguments("--window-position=1980,1050");
-    Dimension windowSize = new Dimension(800, 600); // 원하는 크기로 설정
-    options.addArguments("--window-size=" + windowSize.width + "," + windowSize.height);
-    options.addArguments("--lang=ko");
+//    options.addArguments("--disable-popup-blocking"); // 팝업 안띄움
+////    options.addArguments("--headless"); // 브라우저 창 숨기고 실행
+//    options.addArguments("--start-minimized");
+//    options.addArguments("--enable-automation");
+//    options.addArguments("--window-position=1980,1050");
+//    Dimension windowSize = new Dimension(800, 600); // 원하는 크기로 설정
+//    options.addArguments("--window-size=" + windowSize.width + "," + windowSize.height);
+//    options.addArguments("--lang=ko");
     options.addArguments("--disable-gpu");            //gpu 비활성화
-    options.addArguments("--blink-settings=imagesEnabled=false"); //이미지 다운 안받음
+//    options.addArguments("--blink-settings=imagesEnabled=false"); //이미지 다운 안받음
 
     driver = new ChromeDriver();
     driver.manage().timeouts().implicitlyWait(300, TimeUnit.MILLISECONDS);
@@ -263,14 +265,14 @@ public class NovelDetailServiceImpl implements NovelDetailService {
 
     // webDriver 옵션 설정
     ChromeOptions options = new ChromeOptions();
-    options.addArguments("--disable-popup-blocking"); // 팝업 안띄움
-    options.addArguments("--headless"); // 브라우저 창 숨기고 실행
+//    options.addArguments("--disable-popup-blocking"); // 팝업 안띄움
+//    options.addArguments("--headless"); // 브라우저 창 숨기고 실행
 //    options.addArguments("--enable-automation");
 //    options.addArguments("--window-position=-100000,-100000");
 //    options.addArguments("--window-size=0,0");
 //    options.addArguments("--lang=ko");
     options.addArguments("--disable-gpu");            //gpu 비활성화
-    options.addArguments("--blink-settings=imagesEnabled=false"); //이미지 다운 안받음
+//    options.addArguments("--blink-settings=imagesEnabled=false"); //이미지 다운 안받음
 
     driver = new ChromeDriver();
     driver.manage().timeouts().implicitlyWait(300, TimeUnit.MILLISECONDS);
